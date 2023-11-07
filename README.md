@@ -26,6 +26,10 @@ pytest
 - pytest # test framework
 - pytest-asyncio # for async functions
 
+## dev dependencies
+- flake8 # code linting
+- black # code formatting 
+
 ## useful commands
 ```
 pip freeze > requirements.txt
