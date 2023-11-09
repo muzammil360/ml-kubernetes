@@ -10,12 +10,12 @@ E:\venvs\ml-kubernetes\Scripts\activate.bat
 ```
 ## running in dev
 ```
-uvicorn server:app --reload
+cd api && uvicorn server:app --reload
 ```
 
 ## runnning tests
 ```
-pytest
+cd api && pytest
 ```
 
 # Notes
@@ -25,6 +25,8 @@ pytest
 - httpx # http client for testing
 - pytest # test framework
 - pytest-asyncio # for async functions
+- opencv # for yolo
+- requests # for downloading model
 
 ## dev dependencies
 - flake8 # code linting
@@ -32,6 +34,7 @@ pytest
 
 ## useful commands
 ```
-pip freeze > requirements.txt
+cd api && pip freeze > requirements.txt
 
 ```
+
