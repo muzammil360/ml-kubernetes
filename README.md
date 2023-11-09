@@ -32,6 +32,6 @@ pytest
 
 ## useful commands
 ```
-pip freeze > requirements.txt
+pip freeze > api\requirements.txt
 
 ```
