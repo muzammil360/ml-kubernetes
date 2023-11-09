@@ -8,7 +8,6 @@ class Yolov6:
         self.model_path = model_path
         self.net = cv2.dnn.readNet(self.model_path)
 
-
     def infer(self, input_frame):
         detections = pre_process(input_frame.copy(), self.net)
         output_image = post_process(input_frame.copy(), detections)
