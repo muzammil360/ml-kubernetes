@@ -25,5 +25,5 @@ jobs:
       - name: Login, Build and push Docker image
         run: |
           echo "${{ secrets.DOCKERHUB_PUSH_TOKEN }}" | docker login -u muzammil360 --password-stdin
-          docker build -t muzammil360/ml-kubernetes/api:latest .
-          docker push muzammil360/ml-kubernetes/api:latest
+          docker build -t muzammil360/ml-kubernetes:latest .
+          docker push muzammil360/ml-kubernetes:latest
