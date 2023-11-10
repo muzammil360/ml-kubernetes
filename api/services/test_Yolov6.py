@@ -1,9 +1,10 @@
 import os
 
 import cv2
-from Yolov6 import Yolov6
+from .Yolov6 import Yolov6
 
-model_path = os.path.join("..", "yolov6m.onnx")
+from ..utils.config import model_path
+
 model = Yolov6(model_path)
 
 

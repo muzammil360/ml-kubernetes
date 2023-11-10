@@ -1,6 +1,6 @@
 import cv2
 
-from Yolov6Engine import pre_process, post_process
+from .Yolov6Engine import pre_process, post_process
 
 
 class Yolov6:

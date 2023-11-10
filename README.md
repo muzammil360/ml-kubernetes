@@ -27,6 +27,7 @@ cd api && pytest
 - pytest-asyncio # for async functions
 - opencv # for yolo
 - requests # for downloading model
+- python-multipart # for file upload handling
 
 ## dev dependencies
 - flake8 # code linting
@@ -38,3 +39,7 @@ cd api && pip freeze > requirements.txt
 
 ```
 
+# Next steps
+- learn more about python modules
+  - how __init__.py helps? 
+  - different b/w relative and abs imports
