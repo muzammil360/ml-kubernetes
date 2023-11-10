@@ -1,4 +1,4 @@
-name: Docker CI/CD
+name: API-CD
 
 on:
   push:
