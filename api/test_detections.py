@@ -15,15 +15,17 @@ def test_read_root():
 
 def test_post_detections():
     # send an image with multipart file upload
-    image_path = os.path.join("resources", "test_image1.jpg")
+    test_image_name = "test_image1.jpg"
+    image_path = os.path.join("resources", test_image_name)
     files = {
-        "file": ("test_image1.jpg", open(image_path, "rb"), "image/jpeg")
+        "file": (test_image_name, open(image_path, "rb"), "image/jpeg")
     }  # TODO: understand better
 
     # Send a POST request to the /upload endpoint
     response = client.post("/v1/detections", files=files)  # TODO: understand better
 
-    with open("received_image.jpg", "wb") as f:
+    output_file_path = os.path.join("test_outputs", test_image_name)
+    with open(output_file_path, "wb") as f:
         f.write(response.content)
 
     # Check that the response status code is 200 (OK)
