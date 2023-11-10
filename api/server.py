@@ -12,7 +12,9 @@ from typing import Union
 
 from fastapi import FastAPI, UploadFile
 from fastapi.responses import StreamingResponse
-from pydantic import BaseModel
+
+from .utils.config import model_path
+from .services.Yolov6 import Yolov6
 
 app = FastAPI()
 
@@ -34,8 +36,7 @@ def get_ping():
 
 # TODO: move v1 api into its own folder
 # =========== v1 api =============
-from .utils.config import model_path
-from .services.Yolov6 import Yolov6
+
 
 model = Yolov6(model_path)
 
