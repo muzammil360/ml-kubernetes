@@ -1,0 +1,29 @@
+name: API-CD
+
+on:
+  push:
+    branches:
+      - 'main'
+
+env:
+  WORKING_DIR: ./api
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ${{ env.WORKING_DIR }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # - name: Login to Docker Hub
+      #   run: echo "${{ secrets.DOCKERHUB_PUSH_TOKEN }}" | docker login -u muzammil360 --password-stdin
+
+      - name: Login, Build and push Docker image
+        run: |
+          echo "${{ secrets.DOCKERHUB_PUSH_TOKEN }}" | docker login -u muzammil360 --password-stdin
+          docker build -t muzammil360/ml-kubernetes:latest .
+          docker push muzammil360/ml-kubernetes:latest
