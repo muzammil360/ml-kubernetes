@@ -3,7 +3,7 @@ name: API-CD
 on:
   push:
     branches:
-      - 'muz/add-cd-pipeline'
+      - 'main'
 
 env:
   WORKING_DIR: ./api
